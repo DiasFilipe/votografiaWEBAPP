@@ -1,3 +1,4 @@
+import { requireAuth } from "@/lib/auth";
 import { getCount } from "@/lib/mobilizacao/db";
 import ContadorLive from "@/components/mobilizacao/ContadorLive";
 import FormAssinatura from "@/components/mobilizacao/FormAssinatura";
@@ -15,6 +16,7 @@ const RAZOES = [
 ];
 
 export default async function MobilizacaoPage() {
+  await requireAuth();
   const count = getCount();
 
   return (

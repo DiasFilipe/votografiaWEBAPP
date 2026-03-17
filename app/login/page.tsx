@@ -1,25 +1,13 @@
-import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { SUBDOMAIN_TO_CLIENTE } from "@/lib/clientes/subdomains";
 import { getCliente } from "@/lib/clientes/registry";
+import { getClienteId } from "@/lib/auth";
 import LoginForm from "./LoginForm";
-
-function resolveClienteId(host: string): string {
-  if (host.startsWith("localhost") || host.startsWith("127.")) {
-    return process.env.DEV_CLIENTE_ID ?? "van-hattem";
-  }
-  const sub = host.split(".")[0];
-  if (sub === "admin") return "admin";
-  return SUBDOMAIN_TO_CLIENTE[sub] ?? "van-hattem";
-}
 
 export default async function LoginPage() {
   // Dev: bypass de login
   if (process.env.NODE_ENV === "development") redirect("/");
 
-  const h = await headers();
-  const host = h.get("host") ?? "";
-  const clienteId = resolveClienteId(host);
+  const clienteId = await getClienteId();
 
   const cliente =
     clienteId === "admin"
@@ -34,7 +22,6 @@ export default async function LoginPage() {
   return (
     <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
-        {/* Logo / identidade */}
         <div className="flex flex-col items-center mb-8">
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-black mb-4"

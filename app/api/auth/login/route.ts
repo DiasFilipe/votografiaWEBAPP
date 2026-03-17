@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCliente } from "@/lib/clientes/registry";
-import { createToken, SESSION_COOKIE, SESSION_MAX_AGE } from "@/lib/clientes/session";
+import { createToken, SESSION_COOKIE, SESSION_MAX_AGE } from "@/lib/auth";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "admin-mude-em-producao";
 

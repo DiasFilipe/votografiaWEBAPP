@@ -1,11 +1,10 @@
-import { headers } from "next/headers";
+import { requireAuth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { getAllClientes } from "@/lib/clientes/registry";
 import { getMunicipios, getTotalVotos } from "@/lib/painel/data";
 
 export default async function AdminPage() {
-  const h = await headers();
-  const clienteId = h.get("x-cliente-id");
+  const clienteId = await requireAuth();
   if (clienteId !== "admin") redirect("/painel");
 
   const clientes = getAllClientes();
@@ -30,7 +29,6 @@ export default async function AdminPage() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {stats.map((c) => (
           <div key={c.id} className="bg-gray-800 border border-gray-700 rounded-2xl p-6 space-y-4">
-            {/* Header */}
             <div className="flex items-center gap-3">
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg flex-shrink-0"
@@ -44,7 +42,6 @@ export default async function AdminPage() {
               </div>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-gray-900/60 rounded-xl p-3">
                 <div className="text-xl font-black" style={{ color: c.cor }}>
@@ -58,14 +55,12 @@ export default async function AdminPage() {
               </div>
             </div>
 
-            {/* Módulos */}
             <div className="flex gap-2 flex-wrap">
               {c.modulos.painel && <span className="text-xs bg-gray-700 text-gray-300 px-2 py-0.5 rounded-full">Painel</span>}
               {c.modulos.sentimento && <span className="text-xs bg-gray-700 text-gray-300 px-2 py-0.5 rounded-full">Sentimento</span>}
               {c.modulos.mobilizacao && <span className="text-xs bg-gray-700 text-gray-300 px-2 py-0.5 rounded-full">Mobilização</span>}
             </div>
 
-            {/* Subdomain link */}
             <p className="text-gray-600 text-xs font-mono">
               {c.subdominio}.votografia.com.br
             </p>

@@ -1,12 +1,11 @@
-import { headers } from "next/headers";
+import { requireAuth } from "@/lib/auth";
 import Link from "next/link";
 import { getMunicipios, getTotalVotos, getPotencial } from "@/lib/painel/data";
 
 export const metadata = { title: "Regiões · Painel Eleitoral" };
 
 export default async function RegioesPage() {
-  const h = await headers();
-  const clienteId = h.get("x-cliente-id") ?? "van-hattem";
+  const clienteId = await requireAuth();
   const municipios = getMunicipios(clienteId);
   const totalVotos = getTotalVotos(municipios);
 

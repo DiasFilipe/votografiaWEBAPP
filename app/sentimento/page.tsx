@@ -1,9 +1,11 @@
+import { requireAuth } from "@/lib/auth";
 import { generateMockMentions } from "@/lib/sentimento/mockData";
 import Dashboard from "@/components/sentimento/Dashboard";
 
 export const dynamic = "force-dynamic";
 
 export default async function SentimentoPage() {
+  await requireAuth();
   const bearerToken = process.env.X_API_BEARER_TOKEN;
   let initial;
 

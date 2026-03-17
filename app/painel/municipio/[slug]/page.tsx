@@ -1,4 +1,4 @@
-import { headers } from "next/headers";
+import { requireAuth } from "@/lib/auth";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getMunicipios, getBySlug, getPotencial, getZona, getColor, getTotalVotos } from "@/lib/painel/data";
@@ -20,8 +20,7 @@ function StatBox({ label, value, sub }: { label: string; value: string; sub?: st
 
 export default async function MunicipioPage({ params }: Props) {
   const { slug } = await params;
-  const h = await headers();
-  const clienteId = h.get("x-cliente-id") ?? "van-hattem";
+  const clienteId = await requireAuth();
 
   const municipios = getMunicipios(clienteId);
   const bySlug = getBySlug(municipios);

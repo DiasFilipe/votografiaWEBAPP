@@ -1,12 +1,11 @@
-import { headers } from "next/headers";
+import { requireAuth } from "@/lib/auth";
 import { getMunicipios, getTotalVotos } from "@/lib/painel/data";
 import { getCliente } from "@/lib/clientes/registry";
 import StatsBar from "@/components/painel/StatsBar";
 import MapHomeClient from "@/components/painel/MapHomeClient";
 
 export default async function PainelPage() {
-  const h = await headers();
-  const clienteId = h.get("x-cliente-id") ?? "van-hattem";
+  const clienteId = await requireAuth();
 
   const municipios = getMunicipios(clienteId);
   const totalVotos = getTotalVotos(municipios);

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { SESSION_COOKIE } from "@/lib/clientes/session";
+import { SESSION_COOKIE } from "@/lib/auth";
 
 export async function POST() {
   const res = NextResponse.redirect("/login");

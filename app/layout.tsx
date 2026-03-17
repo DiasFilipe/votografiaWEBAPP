@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import { ClienteProvider, type ClientePublico } from "@/components/ClienteProvider";
 import { getCliente } from "@/lib/clientes/registry";
+import { getClienteId } from "@/lib/auth";
 
 const ADMIN_CONFIG: ClientePublico = {
   id: "admin",
@@ -18,8 +18,7 @@ const ADMIN_CONFIG: ClientePublico = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const h = await headers();
-  const clienteId = h.get("x-cliente-id") ?? "van-hattem";
+  const clienteId = await getClienteId();
   const c = clienteId === "admin" ? null : getCliente(clienteId);
   const nome = c?.nomeCompleto ?? "Votografia";
   return {
@@ -29,8 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const h = await headers();
-  const clienteId = h.get("x-cliente-id") ?? "van-hattem";
+  const clienteId = await getClienteId();
 
   console.log(`[layout] clienteId=${clienteId} NODE_ENV=${process.env.NODE_ENV}`);
 
@@ -41,7 +39,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     let c;
     try {
       c = getCliente(clienteId);
-      console.log(`[layout] getCliente(${clienteId}) =`, c ? "ok" : "null");
     } catch (err) {
       console.error(`[layout] getCliente(${clienteId}) ERRO:`, err);
       c = null;

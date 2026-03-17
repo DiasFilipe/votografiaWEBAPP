@@ -1,12 +1,11 @@
-import { headers } from "next/headers";
+import { requireAuth } from "@/lib/auth";
 import { getMunicipios } from "@/lib/painel/data";
 import RankingClient from "@/components/painel/RankingClient";
 
 export const metadata = { title: "Ranking de Municípios · Painel Eleitoral" };
 
 export default async function RankingPage() {
-  const h = await headers();
-  const clienteId = h.get("x-cliente-id") ?? "van-hattem";
+  const clienteId = await requireAuth();
   const municipios = getMunicipios(clienteId);
 
   return (
