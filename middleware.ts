@@ -55,14 +55,18 @@ export async function middleware(request: NextRequest) {
   const isPublic =
     pathname.startsWith("/login") ||
     pathname.startsWith("/api/auth") ||
+    pathname.startsWith("/api/health") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/data/") ||
     pathname === "/favicon.ico";
 
   const expectedClienteId = resolveClienteId(host);
 
+  console.log(`[middleware] ${request.method} ${pathname} | host=${host} | clienteId=${expectedClienteId} | isPublic=${isPublic}`);
+
   // Subdomínio desconhecido
   if (!expectedClienteId) {
+    console.log(`[middleware] subdomínio desconhecido, redirecionando`);
     return NextResponse.redirect(new URL("https://www.votografia.com.br", request.url));
   }
 

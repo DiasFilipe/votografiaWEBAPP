@@ -32,11 +32,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const h = await headers();
   const clienteId = h.get("x-cliente-id") ?? "van-hattem";
 
+  console.log(`[layout] clienteId=${clienteId} NODE_ENV=${process.env.NODE_ENV}`);
+
   let config: ClientePublico;
   if (clienteId === "admin") {
     config = ADMIN_CONFIG;
   } else {
-    const c = getCliente(clienteId);
+    let c;
+    try {
+      c = getCliente(clienteId);
+      console.log(`[layout] getCliente(${clienteId}) =`, c ? "ok" : "null");
+    } catch (err) {
+      console.error(`[layout] getCliente(${clienteId}) ERRO:`, err);
+      c = null;
+    }
     config = c
       ? {
           id: c.id,
