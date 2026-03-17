@@ -26,6 +26,20 @@ function Badge({ label, cls }: { label: string; cls: string }) {
 
 type SortKey = "votos" | "pct" | "potencial" | "nome";
 
+function SortBtn({ k, label, sort, setSort, setPage }: {
+  k: SortKey;
+  label: string;
+  sort: SortKey;
+  setSort: (k: SortKey) => void;
+  setPage: (p: number) => void;
+}) {
+  return (
+    <button onClick={() => { setSort(k); setPage(0); }} className={`text-xs font-medium transition ${sort === k ? "text-amber-600" : "text-gray-400 hover:text-gray-700"}`}>
+      {label} {sort === k ? "↓" : ""}
+    </button>
+  );
+}
+
 export default function RankingClient({ municipios }: Props) {
   const [q, setQ] = useState("");
   const [zona, setZona] = useState<"all" | "fortaleza" | "crescimento" | "fraco">("all");
@@ -53,14 +67,6 @@ export default function RankingClient({ municipios }: Props) {
 
   const page_data = filtered.slice(page * PER_PAGE, (page + 1) * PER_PAGE);
   const totalPages = Math.ceil(filtered.length / PER_PAGE);
-
-  function SortBtn({ k, label }: { k: SortKey; label: string }) {
-    return (
-      <button onClick={() => { setSort(k); setPage(0); }} className={`text-xs font-medium transition ${sort === k ? "text-amber-600" : "text-gray-400 hover:text-gray-700"}`}>
-        {label} {sort === k ? "↓" : ""}
-      </button>
-    );
-  }
 
   return (
     <div className="space-y-4">
@@ -92,11 +98,11 @@ export default function RankingClient({ municipios }: Props) {
           <thead className="bg-gray-50">
             <tr className="border-b border-gray-200">
               <th className="px-4 py-3 text-left text-gray-400 font-medium w-8">#</th>
-              <th className="px-4 py-3 text-left"><SortBtn k="nome" label="Município" /></th>
-              <th className="px-4 py-3 text-right"><SortBtn k="votos" label="Votos" /></th>
-              <th className="px-4 py-3 text-right"><SortBtn k="pct" label="% Eleit." /></th>
+              <th className="px-4 py-3 text-left"><SortBtn k="nome" label="Município" sort={sort} setSort={setSort} setPage={setPage} /></th>
+              <th className="px-4 py-3 text-right"><SortBtn k="votos" label="Votos" sort={sort} setSort={setSort} setPage={setPage} /></th>
+              <th className="px-4 py-3 text-right"><SortBtn k="pct" label="% Eleit." sort={sort} setSort={setSort} setPage={setPage} /></th>
               <th className="px-4 py-3 text-center hidden md:table-cell">Zona</th>
-              <th className="px-4 py-3 text-center hidden md:table-cell"><SortBtn k="potencial" label="Potencial 2026" /></th>
+              <th className="px-4 py-3 text-center hidden md:table-cell"><SortBtn k="potencial" label="Potencial 2026" sort={sort} setSort={setSort} setPage={setPage} /></th>
               <th className="px-4 py-3 w-8"></th>
             </tr>
           </thead>

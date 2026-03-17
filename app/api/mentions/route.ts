@@ -13,7 +13,6 @@ async function fetchRealMentions(bearerToken: string): Promise<MentionData> {
   const res = await fetch(url, { headers: { Authorization: `Bearer ${bearerToken}` } });
   if (!res.ok) throw new Error(`X API error: ${res.status}`);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const data = await res.json() as any;
   const usersMap: Record<string, { name: string; username: string }> = {};
   if (data.includes?.users) {
@@ -23,7 +22,6 @@ async function fetchRealMentions(bearerToken: string): Promise<MentionData> {
   }
 
   const { analyzeSentiment, detectState } = await import("@/lib/sentimento/sentiment");
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const mentions = (data.data || []).map((t: any) => {
     const author = usersMap[t.author_id] || { name: "Usuário", username: "user" };
     const { sentiment, score } = analyzeSentiment(t.text);

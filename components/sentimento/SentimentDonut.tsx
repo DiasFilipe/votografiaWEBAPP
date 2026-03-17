@@ -12,7 +12,6 @@ export default function SentimentDonut({ stats }: { stats: SentimentStats }) {
     { name: "Neutro", value: stats.neutro, pct: stats.neutroPct },
   ].filter((d) => d.value > 0);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const CustomLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, pct }: any) => {
     const RADIAN = Math.PI / 180;
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;

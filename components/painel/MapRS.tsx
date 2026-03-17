@@ -99,8 +99,8 @@ export default function MapRS({ filter = "all", onSelect, geojsonUrl }: Props) {
               </div>
             `);
 
-            layer.on("mouseover", function (this: import("leaflet").Path) {
-              this.setStyle({ weight: 2, color: "#f59e0b", fillOpacity: 0.9 });
+            layer.on("mouseover", () => {
+              (layer as import("leaflet").Path).setStyle({ weight: 2, color: "#f59e0b", fillOpacity: 0.9 });
             });
             layer.on("mouseout", function () { geoLayer.resetStyle(layer); });
             layer.on("click", () => { onSelect?.(d); });
