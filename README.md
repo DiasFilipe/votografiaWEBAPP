@@ -50,7 +50,7 @@ sostenes.votografia.com.br     →  Sóstenes Cavalcante (RJ)
 lindbergh.votografia.com.br    →  Lindbergh Farias (RJ)
 ```
 
-O middleware (`proxy.ts`) lê o subdomínio de cada requisição, identifica o candidato e injeta essa informação para todas as páginas carregarem os dados corretos — mapa do estado certo, cores da identidade visual, módulos habilitados.
+O cliente ativo é resolvido no servidor via [`lib/auth.ts`](./lib/auth.ts): em produção, pelo **cookie de sessão** (`vtg_sess`) e pelo **host/subdomínio**; em desenvolvimento, o login é bypassado e o cookie `dev_cliente_id` permite alternar o cliente na UI.
 
 Cada candidato tem uma senha própria e só acessa seus próprios dados.
 
@@ -79,7 +79,7 @@ cp .env.example .env.local   # preencha DATABASE_URL e SESSION_SECRET
 npm run dev                  # http://localhost:3010
 ```
 
-Em desenvolvimento, o login é bypassado automaticamente. Para trocar de candidato, clique no **avatar** no canto superior esquerdo da sidebar — um dropdown mostra todos os candidatos disponíveis.
+Em desenvolvimento, o login é bypassado automaticamente. Para trocar de candidato, clique no **avatar** no canto superior esquerdo da sidebar — um dropdown mostra todos os candidatos disponíveis (grava o cookie `dev_cliente_id`).
 
 ### Banco de dados
 

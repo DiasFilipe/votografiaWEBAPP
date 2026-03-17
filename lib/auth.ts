@@ -7,14 +7,22 @@ import { redirect } from "next/navigation";
 import { createHmac } from "crypto";
 import { SUBDOMAIN_TO_CLIENTE } from "./clientes/subdomains";
 
-const SECRET = process.env.SESSION_SECRET ?? "dev-secret-please-change-in-prod!";
 export const SESSION_COOKIE = "vtg_sess";
 export const SESSION_MAX_AGE = 7 * 24 * 60 * 60; // 7 dias em segundos
+
+function getSecret(): string {
+  const secret = process.env.SESSION_SECRET;
+  if (secret) return secret;
+  if (process.env.NODE_ENV === "production") {
+    throw new Error("SESSION_SECRET missing (required in production)");
+  }
+  return "dev-secret-please-change-in-prod!";
+}
 
 export function createToken(clienteId: string): string {
   const ts = Date.now().toString();
   const payload = `${encodeURIComponent(clienteId)}.${ts}`;
-  const sig = createHmac("sha256", SECRET).update(payload).digest("base64url");
+  const sig = createHmac("sha256", getSecret()).update(payload).digest("base64url");
   return `${payload}.${sig}`;
 }
 
@@ -22,7 +30,7 @@ function verifyToken(token: string): string | null {
   const parts = token.split(".");
   if (parts.length !== 3) return null;
   const payload = `${parts[0]}.${parts[1]}`;
-  const sig = createHmac("sha256", SECRET).update(payload).digest("base64url");
+  const sig = createHmac("sha256", getSecret()).update(payload).digest("base64url");
   if (sig !== parts[2]) return null;
   const ts = parseInt(parts[1], 10);
   if (isNaN(ts) || Date.now() - ts > SESSION_MAX_AGE * 1000) return null;

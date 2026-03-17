@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { getClienteId } from "@/lib/auth";
+import { requireAuth } from "@/lib/auth";
 import { getAllClientes } from "@/lib/clientes/registry";
 
 export async function GET() {
-  const clienteId = await getClienteId();
+  const clienteId = await requireAuth();
   if (clienteId !== "admin") {
     return NextResponse.json({ error: "forbidden" }, { status: 403 });
   }

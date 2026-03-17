@@ -2,7 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { getCliente } from "@/lib/clientes/registry";
 import { createToken, SESSION_COOKIE, SESSION_MAX_AGE } from "@/lib/auth";
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? "admin-mude-em-producao";
+export const runtime = "nodejs";
+
+function getAdminPassword(): string {
+  const pwd = process.env.ADMIN_PASSWORD;
+  if (pwd) return pwd;
+  if (process.env.NODE_ENV === "production") {
+    throw new Error("ADMIN_PASSWORD missing (required in production)");
+  }
+  return "admin-mude-em-producao";
+}
 
 export async function POST(req: NextRequest) {
   const { clienteId, senha } = await req.json().catch(() => ({}));
@@ -14,7 +23,7 @@ export async function POST(req: NextRequest) {
   let authorized = false;
 
   if (clienteId === "admin") {
-    authorized = senha === ADMIN_PASSWORD;
+    authorized = senha === getAdminPassword();
   } else {
     const cliente = getCliente(clienteId);
     authorized = !!cliente && cliente.senha === senha;

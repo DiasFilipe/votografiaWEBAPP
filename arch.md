@@ -10,14 +10,10 @@ Documentação técnica da plataforma multi-tenant de inteligência eleitoral.
 Browser
   │
   ▼
-proxy.ts (Next.js middleware)
-  │  resolve subdomínio → clienteId
-  │  verifica sessão (produção)
-  │  injeta header x-cliente-id
-  ▼
 Server Components (App Router)
-  │  leem x-cliente-id via headers()
-  │  buscam dados no Postgres
+  │  requireAuth()/getClienteId() em lib/auth.ts
+  │  resolve cliente por cookie/host (produção) ou cookie dev (dev)
+  │  buscam dados (JSON local e/ou Postgres, dependendo do módulo)
   ▼
 Client Components
   │  recebem dados via props
@@ -105,7 +101,7 @@ webapp/
 ├── public/data/                  # GeoJSON por cliente
 │   └── {clienteId}-municipios.geojson
 │
-├── proxy.ts                      # Middleware: auth + multi-tenant routing
+├── lib/auth.ts                   # Auth + resolução de cliente (server-only)
 └── next.config.ts                # output: standalone, turbopack.root
 ```
 
@@ -124,7 +120,7 @@ admin.votografia.com.br       →  "admin"
 localhost:3010                →  DEV_CLIENTE_ID ou "van-hattem"
 ```
 
-O `proxy.ts` intercepta toda requisição, resolve o subdomínio e injeta o header `x-cliente-id`. Server components leem esse header via `headers()` para carregar dados do cliente correto. Não há build separado por cliente — tudo é runtime.
+Não existe header `x-cliente-id`: o servidor resolve o cliente via `lib/auth.ts`, usando o host/subdomínio e (em produção) o cookie de sessão `vtg_sess`.
 
 ---
 
@@ -148,7 +144,7 @@ O `proxy.ts` intercepta toda requisição, resolve o subdomínio e injeta o head
    Cookie vtg_sess (httpOnly, secure em prod, 7 dias)
 ```
 
-### Verificação por requisição (proxy.ts)
+### Verificação por requisição (server-only)
 
 ```
 verifyToken(token)
@@ -159,7 +155,7 @@ verifyToken(token)
   5. Retorna decodeURIComponent(encId) ou null
 ```
 
-A verificação usa **Web Crypto API** (compatível com Edge runtime do Next.js middleware). A criação do token usa **Node.js `crypto`** (somente em API routes).
+O token é assinado/verificado com HMAC-SHA256 via **Node.js `crypto`** (server components e route handlers em runtime Node).
 
 ### Autorização
 
@@ -243,9 +239,8 @@ npm run db:seed      # popula clientes e municípios a partir dos JSON locais
 ```
 GET vanhattem.votografia.com.br/painel
   │
-  ├─ proxy.ts: x-cliente-id = "van-hattem"
-  │
   ├─ app/painel/page.tsx (Server Component)
+  │    requireAuth() → "van-hattem"
   │    getMunicipios("van-hattem")
   │      └─ SELECT * FROM municipios WHERE cliente_id = 'van-hattem'
   │      └─ cache em memória (Map por clienteId)
@@ -304,7 +299,7 @@ Exclusivo para `NODE_ENV=development`. Clique no avatar na Sidebar abre dropdown
 
 1. `POST /api/dev/switch` → grava cookie `dev_cliente_id` (não-httpOnly)
 2. `window.location.reload()` — recarrega a página
-3. `proxy.ts` lê o cookie e injeta o novo `x-cliente-id`
+3. `lib/auth.ts` lê o cookie e passa a resolver o novo clienteId no servidor
 4. Todos os server components usam o novo cliente
 
 ---
@@ -314,11 +309,12 @@ Exclusivo para `NODE_ENV=development`. Clique no avatar na Sidebar abre dropdown
 | Variável | Onde usada | Obrigatória |
 |----------|-----------|-------------|
 | `DATABASE_URL` | `db/client.ts` | Sim |
-| `SESSION_SECRET` | `proxy.ts`, `lib/clientes/session.ts` | Sim (prod) |
+| `SESSION_SECRET` | `lib/auth.ts` | Sim (prod) |
 | `ADMIN_PASSWORD` | `/api/auth/login` | Sim (prod) |
 | `X_API_BEARER_TOKEN` | `/api/mentions` | Não (cai em mock) |
-| `NODE_ENV` | proxy, sidebar, login | Auto |
-| `DEV_CLIENTE_ID` | `proxy.ts` (dev only) | Não |
+| `NODE_ENV` | `lib/auth.ts`, sidebar, login | Auto |
+| `DEV_CLIENTE_ID` | `lib/auth.ts` (dev only) | Não |
+| `DEFAULT_CLIENTE_ID` | `lib/auth.ts` (railway host fallback) | Não |
 | `PORT` | `npm start` | Não (padrão 3010) |
 
 Ver `webapp/.env.example` para a lista completa incluindo variáveis legadas single-tenant.
