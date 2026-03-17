@@ -7,8 +7,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 async function migrate() {
   const pool = getPool();
-  const sql = readFileSync(join(__dirname, "migrations/001_initial.sql"), "utf-8");
-  await pool.query(sql);
+  const files = ["001_initial.sql", "002_wikipedia.sql"];
+  for (const file of files) {
+    const sql = readFileSync(join(__dirname, "migrations", file), "utf-8");
+    await pool.query(sql);
+    console.log(`  ✓ ${file}`);
+  }
   console.log("✓ Migrations concluídas");
   await pool.end();
 }

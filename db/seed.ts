@@ -10,6 +10,7 @@ interface ClienteJSON {
   id: string; subdominio: string; nome: string; nomeCompleto: string;
   partido: string; estado: string; cargo: string;
   cor: string; corTexto: string; foto: string; senha: string;
+  wikipedia?: string;
   modulos: { painel: boolean; sentimento: boolean; mobilizacao: boolean };
 }
 
@@ -28,21 +29,21 @@ async function seed() {
     await pool.query(
       `INSERT INTO clientes
          (id, subdominio, nome, nome_completo, partido, estado, cargo,
-          cor, cor_texto, foto, senha,
+          cor, cor_texto, foto, senha, wikipedia,
           modulo_painel, modulo_sentimento, modulo_mobilizacao)
-       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15)
        ON CONFLICT (id) DO UPDATE SET
          subdominio=EXCLUDED.subdominio, nome=EXCLUDED.nome,
          nome_completo=EXCLUDED.nome_completo, partido=EXCLUDED.partido,
          estado=EXCLUDED.estado, cargo=EXCLUDED.cargo,
          cor=EXCLUDED.cor, cor_texto=EXCLUDED.cor_texto, foto=EXCLUDED.foto,
-         senha=EXCLUDED.senha,
+         senha=EXCLUDED.senha, wikipedia=EXCLUDED.wikipedia,
          modulo_painel=EXCLUDED.modulo_painel,
          modulo_sentimento=EXCLUDED.modulo_sentimento,
          modulo_mobilizacao=EXCLUDED.modulo_mobilizacao`,
       [
         c.id, c.subdominio, c.nome, c.nomeCompleto, c.partido, c.estado, c.cargo,
-        c.cor, c.corTexto, c.foto, c.senha,
+        c.cor, c.corTexto, c.foto, c.senha, c.wikipedia ?? null,
         c.modulos.painel, c.modulos.sentimento, c.modulos.mobilizacao,
       ]
     );

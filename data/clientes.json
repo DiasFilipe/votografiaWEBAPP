@@ -10,6 +10,7 @@
     "cor": "#f59e0b",
     "corTexto": "#000000",
     "foto": "/foto.jpg",
+    "wikipedia": "Marcel_van_Hattem",
     "senha": "vh2026",
     "modulos": { "painel": true, "sentimento": true, "mobilizacao": true }
   },
@@ -38,6 +39,7 @@
     "cor": "#dc2626",
     "corTexto": "#ffffff",
     "foto": "/foto.jpg",
+    "wikipedia": "Sóstenes_Cavalcante",
     "senha": "sc2026",
     "modulos": { "painel": true, "sentimento": true, "mobilizacao": false }
   },
@@ -52,6 +54,7 @@
     "cor": "#b91c1c",
     "corTexto": "#ffffff",
     "foto": "/foto.jpg",
+    "wikipedia": "Lindbergh_Farias",
     "senha": "lf2026",
     "modulos": { "painel": true, "sentimento": true, "mobilizacao": false }
   }

@@ -6,7 +6,10 @@
     "dev": "next dev --port 3010",
     "build": "next build && cp -r public .next/standalone/public && cp -r .next/static .next/standalone/.next/static",
     "start": "node .next/standalone/server.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "db:migrate": "tsx --env-file=.env.local db/migrate.ts",
+    "db:seed": "tsx --env-file=.env.local db/seed.ts",
+    "db:fetch-photos": "tsx --env-file=.env.local db/fetch-photos.ts"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.21",
@@ -27,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
