@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3010",
-    "build": "next build && cp -r public .next/standalone/public && cp -r .next/static .next/standalone/.next/static",
+    "build": "next build && cp -r public .next/standalone/public && cp -r .next/static .next/standalone/.next/static && cp -r data .next/standalone/data",
     "start": "node .next/standalone/server.js",
     "lint": "eslint .",
     "db:migrate": "tsx --env-file=.env.local db/migrate.ts",
