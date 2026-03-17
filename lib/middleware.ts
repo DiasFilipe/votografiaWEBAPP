@@ -43,7 +43,7 @@ function resolveClienteId(host: string): string | null {
   return SUBDOMAIN_TO_CLIENTE[sub] ?? null;
 }
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const host = request.headers.get("host") ?? "";
 
