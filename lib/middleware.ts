@@ -71,9 +71,10 @@ export async function middleware(request: NextRequest) {
 
   if (isPublic) return forward(expectedClienteId);
 
-  // Dev: bypass de autenticação
+  // Dev: bypass de autenticação + suporte ao switcher de cliente via cookie
   if (process.env.NODE_ENV === "development") {
-    return forward(expectedClienteId);
+    const devOverride = request.cookies.get("dev_cliente_id")?.value;
+    return forward(devOverride ?? expectedClienteId);
   }
 
   // Produção: verifica sessão
