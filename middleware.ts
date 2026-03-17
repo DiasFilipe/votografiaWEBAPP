@@ -47,7 +47,7 @@ function resolveClienteId(host: string): string | null {
   return SUBDOMAIN_TO_CLIENTE[sub] ?? null;
 }
 
-export async function middleware(request: NextRequest) {
+async function middlewareFn(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const host = request.headers.get("host") ?? "";
 
@@ -105,6 +105,17 @@ export async function middleware(request: NextRequest) {
 
   return forward(sessionClienteId);
 }
+
+export async function middleware(request: NextRequest) {
+  try {
+    return await middlewareFn(request);
+  } catch (err) {
+    console.error("[middleware] ERRO NÃO TRATADO:", err);
+    return NextResponse.json({ error: "middleware crash", detail: String(err) }, { status: 500 });
+  }
+}
+
+export default middleware;
 
 export const config = {
   matcher: ["/((?!_next/static|_next/image|favicon\\.ico).*)"],
