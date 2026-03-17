@@ -1,0 +1,646 @@
+[
+  {
+    "municipio": "RIO DE JANEIRO",
+    "cod_tse": "60011",
+    "votos": 29289,
+    "total_dep_fed": 3100737,
+    "pct": 0.94
+  },
+  {
+    "municipio": "DUQUE DE CAXIAS",
+    "cod_tse": "58335",
+    "votos": 3932,
+    "total_dep_fed": 437554,
+    "pct": 0.9
+  },
+  {
+    "municipio": "NOVA IGUAÇU",
+    "cod_tse": "58696",
+    "votos": 3085,
+    "total_dep_fed": 406872,
+    "pct": 0.76
+  },
+  {
+    "municipio": "SÃO JOÃO DE MERITI",
+    "cod_tse": "59013",
+    "votos": 1903,
+    "total_dep_fed": 240978,
+    "pct": 0.79
+  },
+  {
+    "municipio": "SÃO GONÇALO",
+    "cod_tse": "58971",
+    "votos": 1662,
+    "total_dep_fed": 429318,
+    "pct": 0.39
+  },
+  {
+    "municipio": "BOM JESUS DO ITABAPOANA",
+    "cod_tse": "58114",
+    "votos": 1408,
+    "total_dep_fed": 20815,
+    "pct": 6.76
+  },
+  {
+    "municipio": "BARRA MANSA",
+    "cod_tse": "58076",
+    "votos": 1251,
+    "total_dep_fed": 90902,
+    "pct": 1.38
+  },
+  {
+    "municipio": "NOVA FRIBURGO",
+    "cod_tse": "58670",
+    "votos": 1225,
+    "total_dep_fed": 98444,
+    "pct": 1.24
+  },
+  {
+    "municipio": "TERESÓPOLIS",
+    "cod_tse": "59153",
+    "votos": 1132,
+    "total_dep_fed": 83011,
+    "pct": 1.36
+  },
+  {
+    "municipio": "NITERÓI",
+    "cod_tse": "58653",
+    "votos": 1096,
+    "total_dep_fed": 283117,
+    "pct": 0.39
+  },
+  {
+    "municipio": "BELFORD ROXO",
+    "cod_tse": "58041",
+    "votos": 1060,
+    "total_dep_fed": 228632,
+    "pct": 0.46
+  },
+  {
+    "municipio": "MAGÉ",
+    "cod_tse": "58491",
+    "votos": 1058,
+    "total_dep_fed": 132669,
+    "pct": 0.8
+  },
+  {
+    "municipio": "RIO DAS OSTRAS",
+    "cod_tse": "58203",
+    "votos": 1038,
+    "total_dep_fed": 62600,
+    "pct": 1.66
+  },
+  {
+    "municipio": "SÃO JOSÉ DO VALE DO RIO PRETO",
+    "cod_tse": "59331",
+    "votos": 1030,
+    "total_dep_fed": 11554,
+    "pct": 8.91
+  },
+  {
+    "municipio": "CASIMIRO DE ABREU",
+    "cod_tse": "58254",
+    "votos": 914,
+    "total_dep_fed": 22991,
+    "pct": 3.98
+  },
+  {
+    "municipio": "MACAÉ",
+    "cod_tse": "58475",
+    "votos": 899,
+    "total_dep_fed": 114877,
+    "pct": 0.78
+  },
+  {
+    "municipio": "VOLTA REDONDA",
+    "cod_tse": "59250",
+    "votos": 808,
+    "total_dep_fed": 154508,
+    "pct": 0.52
+  },
+  {
+    "municipio": "CAMPOS DOS GOYTACAZES",
+    "cod_tse": "58190",
+    "votos": 755,
+    "total_dep_fed": 250687,
+    "pct": 0.3
+  },
+  {
+    "municipio": "PETRÓPOLIS",
+    "cod_tse": "58777",
+    "votos": 730,
+    "total_dep_fed": 151997,
+    "pct": 0.48
+  },
+  {
+    "municipio": "ITAPERUNA",
+    "cod_tse": "58432",
+    "votos": 677,
+    "total_dep_fed": 51818,
+    "pct": 1.31
+  },
+  {
+    "municipio": "ARMAÇÃO DOS BÚZIOS",
+    "cod_tse": "58408",
+    "votos": 639,
+    "total_dep_fed": 22585,
+    "pct": 2.83
+  },
+  {
+    "municipio": "RIO BONITO",
+    "cod_tse": "58858",
+    "votos": 624,
+    "total_dep_fed": 32100,
+    "pct": 1.94
+  },
+  {
+    "municipio": "ARARUAMA",
+    "cod_tse": "58033",
+    "votos": 469,
+    "total_dep_fed": 69688,
+    "pct": 0.67
+  },
+  {
+    "municipio": "MESQUITA",
+    "cod_tse": "58467",
+    "votos": 459,
+    "total_dep_fed": 93660,
+    "pct": 0.49
+  },
+  {
+    "municipio": "NILÓPOLIS",
+    "cod_tse": "58637",
+    "votos": 450,
+    "total_dep_fed": 89931,
+    "pct": 0.5
+  },
+  {
+    "municipio": "ITABORAÍ",
+    "cod_tse": "58378",
+    "votos": 439,
+    "total_dep_fed": 118858,
+    "pct": 0.37
+  },
+  {
+    "municipio": "ITAGUAÍ",
+    "cod_tse": "58394",
+    "votos": 422,
+    "total_dep_fed": 63480,
+    "pct": 0.66
+  },
+  {
+    "municipio": "CABO FRIO",
+    "cod_tse": "58130",
+    "votos": 412,
+    "total_dep_fed": 111710,
+    "pct": 0.37
+  },
+  {
+    "municipio": "CACHOEIRAS DE MACACU",
+    "cod_tse": "58157",
+    "votos": 350,
+    "total_dep_fed": 31395,
+    "pct": 1.11
+  },
+  {
+    "municipio": "TRÊS RIOS",
+    "cod_tse": "59196",
+    "votos": 347,
+    "total_dep_fed": 42491,
+    "pct": 0.82
+  },
+  {
+    "municipio": "MANGARATIBA",
+    "cod_tse": "58513",
+    "votos": 334,
+    "total_dep_fed": 26095,
+    "pct": 1.28
+  },
+  {
+    "municipio": "MARICÁ",
+    "cod_tse": "58530",
+    "votos": 295,
+    "total_dep_fed": 101384,
+    "pct": 0.29
+  },
+  {
+    "municipio": "BARRA DO PIRAÍ",
+    "cod_tse": "58050",
+    "votos": 287,
+    "total_dep_fed": 47077,
+    "pct": 0.61
+  },
+  {
+    "municipio": "QUEIMADOS",
+    "cod_tse": "58122",
+    "votos": 259,
+    "total_dep_fed": 70267,
+    "pct": 0.37
+  },
+  {
+    "municipio": "PORCIÚNCULA",
+    "cod_tse": "58815",
+    "votos": 250,
+    "total_dep_fed": 9168,
+    "pct": 2.73
+  },
+  {
+    "municipio": "RESENDE",
+    "cod_tse": "58831",
+    "votos": 247,
+    "total_dep_fed": 64429,
+    "pct": 0.38
+  },
+  {
+    "municipio": "SILVA JARDIM",
+    "cod_tse": "59110",
+    "votos": 236,
+    "total_dep_fed": 13276,
+    "pct": 1.78
+  },
+  {
+    "municipio": "CARDOSO MOREIRA",
+    "cod_tse": "58068",
+    "votos": 225,
+    "total_dep_fed": 8490,
+    "pct": 2.65
+  },
+  {
+    "municipio": "SAQUAREMA",
+    "cod_tse": "59099",
+    "votos": 218,
+    "total_dep_fed": 49131,
+    "pct": 0.44
+  },
+  {
+    "municipio": "CORDEIRO",
+    "cod_tse": "58297",
+    "votos": 214,
+    "total_dep_fed": 11940,
+    "pct": 1.79
+  },
+  {
+    "municipio": "ANGRA DOS REIS",
+    "cod_tse": "58017",
+    "votos": 209,
+    "total_dep_fed": 88132,
+    "pct": 0.24
+  },
+  {
+    "municipio": "SEROPÉDICA",
+    "cod_tse": "58424",
+    "votos": 189,
+    "total_dep_fed": 39794,
+    "pct": 0.47
+  },
+  {
+    "municipio": "SÃO PEDRO DA ALDEIA",
+    "cod_tse": "59030",
+    "votos": 170,
+    "total_dep_fed": 48228,
+    "pct": 0.35
+  },
+  {
+    "municipio": "IGUABA GRANDE",
+    "cod_tse": "58262",
+    "votos": 150,
+    "total_dep_fed": 18899,
+    "pct": 0.79
+  },
+  {
+    "municipio": "TANGUÁ",
+    "cod_tse": "58360",
+    "votos": 144,
+    "total_dep_fed": 18360,
+    "pct": 0.78
+  },
+  {
+    "municipio": "JAPERI",
+    "cod_tse": "58149",
+    "votos": 140,
+    "total_dep_fed": 50474,
+    "pct": 0.28
+  },
+  {
+    "municipio": "SANTO ANTÔNIO DE PÁDUA",
+    "cod_tse": "58939",
+    "votos": 127,
+    "total_dep_fed": 22256,
+    "pct": 0.57
+  },
+  {
+    "municipio": "VASSOURAS",
+    "cod_tse": "59234",
+    "votos": 115,
+    "total_dep_fed": 20089,
+    "pct": 0.57
+  },
+  {
+    "municipio": "ITALVA",
+    "cod_tse": "59293",
+    "votos": 109,
+    "total_dep_fed": 8197,
+    "pct": 1.33
+  },
+  {
+    "municipio": "VALENÇA",
+    "cod_tse": "59218",
+    "votos": 105,
+    "total_dep_fed": 34998,
+    "pct": 0.3
+  },
+  {
+    "municipio": "MACUCO",
+    "cod_tse": "58386",
+    "votos": 104,
+    "total_dep_fed": 5175,
+    "pct": 2.01
+  },
+  {
+    "municipio": "CANTAGALO",
+    "cod_tse": "58211",
+    "votos": 99,
+    "total_dep_fed": 10708,
+    "pct": 0.92
+  },
+  {
+    "municipio": "SÃO FRANCISCO DE ITABAPOANA",
+    "cod_tse": "58289",
+    "votos": 97,
+    "total_dep_fed": 25324,
+    "pct": 0.38
+  },
+  {
+    "municipio": "PARAÍBA DO SUL",
+    "cod_tse": "58734",
+    "votos": 88,
+    "total_dep_fed": 23104,
+    "pct": 0.38
+  },
+  {
+    "municipio": "GUAPIMIRIM",
+    "cod_tse": "58106",
+    "votos": 79,
+    "total_dep_fed": 29305,
+    "pct": 0.27
+  },
+  {
+    "municipio": "NATIVIDADE",
+    "cod_tse": "58610",
+    "votos": 79,
+    "total_dep_fed": 8806,
+    "pct": 0.9
+  },
+  {
+    "municipio": "PARACAMBI",
+    "cod_tse": "58718",
+    "votos": 76,
+    "total_dep_fed": 23623,
+    "pct": 0.32
+  },
+  {
+    "municipio": "APERIBÉ",
+    "cod_tse": "58181",
+    "votos": 60,
+    "total_dep_fed": 7272,
+    "pct": 0.83
+  },
+  {
+    "municipio": "MIGUEL PEREIRA",
+    "cod_tse": "58572",
+    "votos": 59,
+    "total_dep_fed": 16434,
+    "pct": 0.36
+  },
+  {
+    "municipio": "SÃO FIDÉLIS",
+    "cod_tse": "58955",
+    "votos": 59,
+    "total_dep_fed": 21551,
+    "pct": 0.27
+  },
+  {
+    "municipio": "SAPUCAIA",
+    "cod_tse": "59072",
+    "votos": 57,
+    "total_dep_fed": 11301,
+    "pct": 0.5
+  },
+  {
+    "municipio": "PARATY",
+    "cod_tse": "58750",
+    "votos": 57,
+    "total_dep_fed": 22373,
+    "pct": 0.25
+  },
+  {
+    "municipio": "SÃO JOÃO DA BARRA",
+    "cod_tse": "58998",
+    "votos": 56,
+    "total_dep_fed": 26798,
+    "pct": 0.21
+  },
+  {
+    "municipio": "MIRACEMA",
+    "cod_tse": "58599",
+    "votos": 54,
+    "total_dep_fed": 15207,
+    "pct": 0.36
+  },
+  {
+    "municipio": "RIO DAS FLORES",
+    "cod_tse": "58890",
+    "votos": 54,
+    "total_dep_fed": 5843,
+    "pct": 0.92
+  },
+  {
+    "municipio": "BOM JARDIM",
+    "cod_tse": "58092",
+    "votos": 54,
+    "total_dep_fed": 13971,
+    "pct": 0.39
+  },
+  {
+    "municipio": "ITAOCARA",
+    "cod_tse": "58416",
+    "votos": 53,
+    "total_dep_fed": 14102,
+    "pct": 0.38
+  },
+  {
+    "municipio": "SUMIDOURO",
+    "cod_tse": "59137",
+    "votos": 49,
+    "total_dep_fed": 10007,
+    "pct": 0.49
+  },
+  {
+    "municipio": "PATY DO ALFERES",
+    "cod_tse": "59315",
+    "votos": 46,
+    "total_dep_fed": 16429,
+    "pct": 0.28
+  },
+  {
+    "municipio": "CARMO",
+    "cod_tse": "58238",
+    "votos": 44,
+    "total_dep_fed": 10382,
+    "pct": 0.42
+  },
+  {
+    "municipio": "ARRAIAL DO CABO",
+    "cod_tse": "59277",
+    "votos": 42,
+    "total_dep_fed": 21970,
+    "pct": 0.19
+  },
+  {
+    "municipio": "ITATIAIA",
+    "cod_tse": "58440",
+    "votos": 41,
+    "total_dep_fed": 17372,
+    "pct": 0.24
+  },
+  {
+    "municipio": "SÃO JOSÉ DE UBÁ",
+    "cod_tse": "58343",
+    "votos": 39,
+    "total_dep_fed": 5550,
+    "pct": 0.7
+  },
+  {
+    "municipio": "TRAJANO DE MORAES",
+    "cod_tse": "59170",
+    "votos": 34,
+    "total_dep_fed": 6318,
+    "pct": 0.54
+  },
+  {
+    "municipio": "PIRAÍ",
+    "cod_tse": "58793",
+    "votos": 33,
+    "total_dep_fed": 15866,
+    "pct": 0.21
+  },
+  {
+    "municipio": "DUAS BARRAS",
+    "cod_tse": "58319",
+    "votos": 31,
+    "total_dep_fed": 7056,
+    "pct": 0.44
+  },
+  {
+    "municipio": "PORTO REAL",
+    "cod_tse": "58327",
+    "votos": 31,
+    "total_dep_fed": 12362,
+    "pct": 0.25
+  },
+  {
+    "municipio": "CARAPEBUS",
+    "cod_tse": "58300",
+    "votos": 29,
+    "total_dep_fed": 9132,
+    "pct": 0.32
+  },
+  {
+    "municipio": "VARRE-SAI",
+    "cod_tse": "58084",
+    "votos": 29,
+    "total_dep_fed": 5899,
+    "pct": 0.49
+  },
+  {
+    "municipio": "CONCEIÇÃO DE MACABU",
+    "cod_tse": "58270",
+    "votos": 26,
+    "total_dep_fed": 12154,
+    "pct": 0.21
+  },
+  {
+    "municipio": "MENDES",
+    "cod_tse": "58556",
+    "votos": 26,
+    "total_dep_fed": 10703,
+    "pct": 0.24
+  },
+  {
+    "municipio": "ENGENHEIRO PAULO DE FRONTIN",
+    "cod_tse": "58351",
+    "votos": 23,
+    "total_dep_fed": 8049,
+    "pct": 0.29
+  },
+  {
+    "municipio": "SÃO SEBASTIÃO DO ALTO",
+    "cod_tse": "59056",
+    "votos": 22,
+    "total_dep_fed": 5785,
+    "pct": 0.38
+  },
+  {
+    "municipio": "AREAL",
+    "cod_tse": "58220",
+    "votos": 20,
+    "total_dep_fed": 6907,
+    "pct": 0.29
+  },
+  {
+    "municipio": "QUISSAMÃ",
+    "cod_tse": "58009",
+    "votos": 19,
+    "total_dep_fed": 13168,
+    "pct": 0.14
+  },
+  {
+    "municipio": "CAMBUCI",
+    "cod_tse": "58173",
+    "votos": 18,
+    "total_dep_fed": 8983,
+    "pct": 0.2
+  },
+  {
+    "municipio": "SANTA MARIA MADALENA",
+    "cod_tse": "58912",
+    "votos": 16,
+    "total_dep_fed": 6245,
+    "pct": 0.26
+  },
+  {
+    "municipio": "LAJE DO MURIAÉ",
+    "cod_tse": "58459",
+    "votos": 15,
+    "total_dep_fed": 5083,
+    "pct": 0.3
+  },
+  {
+    "municipio": "COMENDADOR LEVY GASPARIAN",
+    "cod_tse": "58165",
+    "votos": 13,
+    "total_dep_fed": 6068,
+    "pct": 0.21
+  },
+  {
+    "municipio": "PINHEIRAL",
+    "cod_tse": "58246",
+    "votos": 13,
+    "total_dep_fed": 12949,
+    "pct": 0.1
+  },
+  {
+    "municipio": "RIO CLARO",
+    "cod_tse": "58874",
+    "votos": 10,
+    "total_dep_fed": 10299,
+    "pct": 0.1
+  },
+  {
+    "municipio": "QUATIS",
+    "cod_tse": "58025",
+    "votos": 3,
+    "total_dep_fed": 7681,
+    "pct": 0.04
+  }
+]

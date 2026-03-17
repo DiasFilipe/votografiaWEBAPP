@@ -1,0 +1,58 @@
+{
+  "van-hattem": {
+    "id": "van-hattem",
+    "subdominio": "vanhattem",
+    "nome": "Van Hattem",
+    "nomeCompleto": "Marcel van Hattem",
+    "partido": "Novo",
+    "estado": "RS",
+    "cargo": "Deputado Federal",
+    "cor": "#f59e0b",
+    "corTexto": "#000000",
+    "foto": "/foto.jpg",
+    "senha": "vh2026",
+    "modulos": { "painel": true, "sentimento": true, "mobilizacao": true }
+  },
+  "carol-sponza": {
+    "id": "carol-sponza",
+    "subdominio": "carolsponza",
+    "nome": "Carol Sponza",
+    "nomeCompleto": "Carol Sponza",
+    "partido": "Novo",
+    "estado": "RJ",
+    "cargo": "Deputada Federal",
+    "cor": "#1d4ed8",
+    "corTexto": "#ffffff",
+    "foto": "/foto.jpg",
+    "senha": "cs2026",
+    "modulos": { "painel": true, "sentimento": true, "mobilizacao": false }
+  },
+  "sostenes": {
+    "id": "sostenes",
+    "subdominio": "sostenes",
+    "nome": "Sóstenes",
+    "nomeCompleto": "Sóstenes Cavalcante",
+    "partido": "PL",
+    "estado": "RJ",
+    "cargo": "Deputado Federal",
+    "cor": "#dc2626",
+    "corTexto": "#ffffff",
+    "foto": "/foto.jpg",
+    "senha": "sc2026",
+    "modulos": { "painel": true, "sentimento": true, "mobilizacao": false }
+  },
+  "lindbergh": {
+    "id": "lindbergh",
+    "subdominio": "lindbergh",
+    "nome": "Lindbergh",
+    "nomeCompleto": "Lindbergh Farias",
+    "partido": "PT",
+    "estado": "RJ",
+    "cargo": "Deputado Federal",
+    "cor": "#b91c1c",
+    "corTexto": "#ffffff",
+    "foto": "/foto.jpg",
+    "senha": "lf2026",
+    "modulos": { "painel": true, "sentimento": true, "mobilizacao": false }
+  }
+}

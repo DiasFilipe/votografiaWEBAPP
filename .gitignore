@@ -1,0 +1,21 @@
+# Arquivos grandes
+dados/van-hattem/rs/*.sql
+dados/van-hattem/rs/*.csv
+dados/*/rj/votacao_candidato_munzona_2022_RJ.csv
+webapp/public/data/rs-municipios.geojson
+
+# Node
+node_modules/
+.next/
+out/
+
+# Env files
+.env.local
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*

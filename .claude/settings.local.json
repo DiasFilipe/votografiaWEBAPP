@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(curl:*)",
+      "Bash(tasklist:*)",
+      "Bash(mkdir -p \"C:/Users/filip/onedrive/votografia/pitch-vanhattem/public/data\" && cp \"C:/Users/filip/onedrive/votografia/rs/van_hattem_2022.json\" \"C:/Users/filip/onedrive/votografia/pitch-vanhattem/public/data/\")",
+      "Bash(cd \"C:/Users/filip/onedrive/votografia\" && npx create-next-app@latest painel-eleitoral --typescript --tailwind --app --no-eslint --no-src-dir --import-alias \"@/*\" --yes 2>&1 | tail -5)",
+      "Bash(netstat -ano | grep \":3002\" | head -5)",
+      "Bash(netstat -ano | grep \":3003\" | head -5)",
+      "Bash(taskkill /PID 6444 /F && taskkill /PID 19184 /F)",
+      "Bash(cmd /c \"taskkill /PID 6444 /F\" && cmd /c \"taskkill /PID 19184 /F\")",
+      "Bash(cmd /c \"for /f \\\\\"tokens=5\\\\\" %a in \\('netstat -ano ^| findstr :3000'\\) do taskkill /PID %a /F\")",
+      "Bash(cmd /c \"netstat -ano | findstr :3000\")",
+      "Bash(cmd /c \"del /f \\\\\"C:\\\\Users\\\\filip\\\\OneDrive\\\\votografia\\\\mobilizacao-cpi\\\\.next\\\\dev\\\\lock\\\\\"\")",
+      "Bash(cmd /c \"rmdir /s /q \\\\\"C:\\\\Users\\\\filip\\\\OneDrive\\\\votografia\\\\mobilizacao-cpi\\\\.next\\\\\"\")",
+      "Bash(cmd /c \"tasklist | findstr node\")",
+      "Bash(cmd /c \"tasklist | findstr -i next\" && cmd /c \"tasklist | findstr -i node\")",
+      "Bash(cmd /c \"dir \\\\\"C:\\\\Users\\\\filip\\\\OneDrive\\\\votografia\\\\mobilizacao-cpi\\\\.next\\\\\"\" 2>&1)",
+      "Bash(cmd /c \"taskkill /IM node.exe /F 2>&1 & taskkill /IM node /F 2>&1 & echo done\")",
+      "Bash(cmd /c \"if exist \\\\\"C:\\\\Users\\\\filip\\\\OneDrive\\\\votografia\\\\mobilizacao-cpi\\\\.next\\\\\" \\(echo EXISTS\\) else \\(echo NOT FOUND\\)\")",
+      "Bash(netstat -ano | findstr :3003)",
+      "Bash(taskkill /PID 19184 /F)",
+      "Bash(cmd.exe /c \"taskkill /PID 19184 /F\")",
+      "Bash(cmd.exe /c \"taskkill /PID 19184 /F && echo done\")",
+      "Bash(cmd /c \"taskkill /PID 19184 /F\")",
+      "Bash(cd /c/Users/filip/onedrive/votografia/webapp && cp .env.example .env.local && npm install 2>&1 | tail -5)",
+      "Bash(cp \"/c/Users/filip/onedrive/votografia/painel-eleitoral/data/van_hattem_2022.json\" \"/c/Users/filip/onedrive/votografia/webapp/data/painel.json\" && cp \"/c/Users/filip/onedrive/votografia/mobilizacao-cpi/data/deputados.json\" \"/c/Users/filip/onedrive/votografia/webapp/data/deputados.json\" && echo '{\"count\":0}' > \"/c/Users/filip/onedrive/votografia/webapp/data/counter.json\" && echo \"ok\")",
+      "Bash(mkdir -p \"/c/Users/filip/onedrive/votografia/webapp/data\" && cp \"/c/Users/filip/onedrive/votografia/painel-eleitoral/data/van_hattem_2022.json\" \"/c/Users/filip/onedrive/votografia/webapp/data/painel.json\" && cp \"/c/Users/filip/onedrive/votografia/mobilizacao-cpi/data/deputados.json\" \"/c/Users/filip/onedrive/votografia/webapp/data/deputados.json\" && echo '{\"count\":0}' > \"/c/Users/filip/onedrive/votografia/webapp/data/counter.json\" && echo \"ok\")",
+      "Bash(rm -rf /c/Users/filip/onedrive/votografia/webapp/.git)",
+      "Bash(git init:*)"
+    ]
+  }
+}
