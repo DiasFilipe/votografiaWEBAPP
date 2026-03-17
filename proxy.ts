@@ -38,6 +38,10 @@ function resolveClienteId(host: string): string | null {
   if (host.startsWith("localhost") || host.startsWith("127.")) {
     return process.env.DEV_CLIENTE_ID ?? "van-hattem";
   }
+  // Domínio Railway (staging/teste) — usa DEFAULT_CLIENTE_ID ou van-hattem
+  if (host.includes("railway.app")) {
+    return process.env.DEFAULT_CLIENTE_ID ?? "van-hattem";
+  }
   const sub = host.split(".")[0];
   if (sub === "admin") return "admin";
   return SUBDOMAIN_TO_CLIENTE[sub] ?? null;
